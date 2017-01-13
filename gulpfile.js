@@ -33,14 +33,14 @@ gulp.task('scss', function(){
         .pipe(sourcemaps.init())
         .pipe(sass({
          errLogToConsole: true,
-         outputStyle: 'expanded',
+         outputStyle: 'compressed'
          // sourceComments: true,
         }).on('error', sass.logError))
         .pipe(autoprefixer())
         .pipe(sourcemaps.write())
         .pipe(gulp.dest("css"))
         .pipe(browserSync.reload({stream: true}));
-})
+});
 
 
 
